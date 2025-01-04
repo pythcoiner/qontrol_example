@@ -9,6 +9,14 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets Gui Core)
 
+# include qontrol from git repo
+include(FetchContent)
+FetchContent_Declare(qontrol
+    GIT_REPOSITORY https://github.com/pythcoiner/qontrol.git
+    GIT_TAG master
+)
+FetchContent_MakeAvailable(qontrol)
+
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 
@@ -19,8 +27,6 @@ set(SOURCES
     src/screens/Home.cpp
     src/screens/Next.cpp
 )
-
-add_subdirectory(qontrol)
 
 qt_add_executable(${BIN}
     ${SOURCES}
@@ -33,7 +39,6 @@ add_dependencies(${BIN}
 target_include_directories(${BIN}
   PUBLIC
     $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/src>
-    $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/qontrol>
 )
 
 target_link_libraries(${BIN} 
