@@ -1,11 +1,11 @@
 #pragma once
 
-#include <QMainWindow>
+#include <Qontrol>
 #include <qevent.h>
 #include <qnamespace.h>
 #include <qwidget.h>
 
-class MainWindow : public QMainWindow {
+class MainWindow : public Window {
     Q_OBJECT
 
 public:
@@ -14,7 +14,14 @@ public:
     void loadLayout(QLayout *layout);
     auto centralWidget() -> QWidget*;
 
+    void loadPanel(QWidget *widget) override;
+    auto takePanel() -> QWidget* override;
+
+signals:
+
 private:
-    QWidget* m_central_widget;
-    bool m_allow_close = false;
+    Column *m_side_menu = nullptr;
+    QWidget *m_panel_widget = nullptr;
+
+    void initWindow();
 };

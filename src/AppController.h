@@ -16,4 +16,8 @@ public:
 public slots:
     void onNext();
     void onPrevious();
+
+    void aClicked();
+    void bClicked();
+    void cClicked();
 };

@@ -18,7 +18,18 @@ void AppController::onNext() {
 
 void AppController::onPrevious() {
     this->loadPanel("home");
+}
 
+void AppController::aClicked() {
+    this->loadPanel("home");
+}
+
+void AppController::bClicked() {
+
+}
+
+void AppController::cClicked() {
+    this->loadPanel("next");
 }
 
 auto AppController::get() -> AppController* {
