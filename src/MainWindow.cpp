@@ -19,18 +19,3 @@ void MainWindow::loadLayout(QLayout *layout) {
 auto MainWindow::centralWidget() -> QWidget* {
     return m_central_widget;
 }
-
-void MainWindow::closeEvent(QCloseEvent *event) {
-    emit this->askClose();
-    if (m_allow_close) {
-        event->accept();
-    }
-    else {
-        event->ignore();
-    }
-}
-
-void MainWindow::onClose() {
-    m_allow_close = true;
-}
-

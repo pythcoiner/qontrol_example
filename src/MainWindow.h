@@ -14,15 +14,6 @@ public:
     void loadLayout(QLayout *layout);
     auto centralWidget() -> QWidget*;
 
-signals:
-    void askClose();
-
-public slots:
-    void onClose();
-
-protected:
-    void closeEvent(QCloseEvent *event) override;
-
 private:
     QWidget* m_central_widget;
     bool m_allow_close = false;
