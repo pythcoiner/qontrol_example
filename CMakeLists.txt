@@ -22,7 +22,7 @@ set(CMAKE_AUTOUIC ON)
 
 set(SOURCES
     src/main.cpp
-    src/AppController.cpp
+    src/Controller.cpp
     src/MainWindow.cpp
     src/screens/Home.cpp
     src/screens/Next.cpp

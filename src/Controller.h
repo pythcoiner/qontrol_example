@@ -3,12 +3,12 @@
 #include <QObject>
 #include <Qontrol>
 
-class AppController : public qontrol::Controller {
+class Controller : public qontrol::Controller {
     Q_OBJECT 
 public:
     void loadPanels() override;
     static void init();
-    static auto get() -> AppController*;
+    static auto get() -> Controller*;
     static auto window() -> QWidget*;
 
 

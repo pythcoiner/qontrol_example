@@ -1,5 +1,5 @@
 #include "Home.h"
-#include "AppController.h"
+#include "Controller.h"
 #include <qlabel.h>
 #include <qpushbutton.h>
 
@@ -14,7 +14,7 @@ void Home::init() {
 }
 
 void Home::doConnect() {
-    connect(m_btn, &QPushButton::clicked, AppController::get(), &AppController::onNext, qontrol::UNIQUE);
+    connect(m_btn, &QPushButton::clicked, Controller::get(), &Controller::onNext, qontrol::UNIQUE);
 }
 
 void Home::view() {

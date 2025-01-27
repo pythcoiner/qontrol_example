@@ -1,5 +1,5 @@
 #include "Next.h"
-#include "AppController.h"
+#include "Controller.h"
 #include <qpushbutton.h>
 
 Next::Next() {
@@ -13,7 +13,7 @@ void Next::init() {
 }
 
 void Next::doConnect() {
-    connect(m_btn, &QPushButton::clicked, AppController::get(), &AppController::onPrevious, qontrol::UNIQUE);
+    connect(m_btn, &QPushButton::clicked, Controller::get(), &Controller::onPrevious, qontrol::UNIQUE);
 }
 
 void Next::view() {

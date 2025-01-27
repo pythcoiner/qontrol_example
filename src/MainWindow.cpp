@@ -1,14 +1,14 @@
 #include "MainWindow.h"
-#include "AppController.h"
+#include "Controller.h"
 #include "Column.h"
 #include "Row.h"
 #include <qpushbutton.h>
 
 MainWindow::MainWindow(QWidget *parent) : Window(parent) {
-    AppController::init();
-    AppController::get()->start(this);
+    Controller::init();
+    Controller::get()->start(this);
     this->initWindow();
-    AppController::get()->loadPanels();
+    Controller::get()->loadPanels();
     this->dumpObjectTree();
 }
 
@@ -29,9 +29,9 @@ void MainWindow::initWindow() {
         m_side_menu->setFixedWidth(151);
         m_side_menu->setObjectName("menu");
 
-        connect(aBtn, &QPushButton::clicked, AppController::get(), &AppController::aClicked);
-        connect(bBtn, &QPushButton::clicked, AppController::get(), &AppController::bClicked);
-        connect(cBtn, &QPushButton::clicked, AppController::get(), &AppController::cClicked);
+        connect(aBtn, &QPushButton::clicked, Controller::get(), &Controller::aClicked);
+        connect(bBtn, &QPushButton::clicked, Controller::get(), &Controller::bClicked);
+        connect(cBtn, &QPushButton::clicked, Controller::get(), &Controller::cClicked);
     }
 
     if (m_panel_widget == nullptr) {

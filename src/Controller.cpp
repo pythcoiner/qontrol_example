@@ -1,9 +1,9 @@
-#include "AppController.h"
+#include "Controller.h"
 #include "screens/Home.h"
 #include "screens/Next.h"
 
 
-void AppController::loadPanels() {
+void Controller::loadPanels() {
     auto *home = new qontrol::Panel(new Home(), "home");
     this->insertPanel(home);
 
@@ -12,40 +12,40 @@ void AppController::loadPanels() {
     this->loadPanel("home");
 }
 
-void AppController::onNext() {
+void Controller::onNext() {
     this->loadPanel("next");
 }
 
-void AppController::onPrevious() {
+void Controller::onPrevious() {
     this->loadPanel("home");
 }
 
-void AppController::aClicked() {
+void Controller::aClicked() {
     this->loadPanel("home");
 }
 
-void AppController::bClicked() {
+void Controller::bClicked() {
 
 }
 
-void AppController::cClicked() {
+void Controller::cClicked() {
     this->loadPanel("next");
 }
 
-auto AppController::get() -> AppController* {
+auto Controller::get() -> Controller* {
     auto *ctrl = qontrol::Controller::get();
-    auto *controller = dynamic_cast<AppController*>(ctrl);
+    auto *controller = dynamic_cast<Controller*>(ctrl);
     return controller;
 }
 
-void AppController::init() {
+void Controller::init() {
     if (qontrol::Controller::isInit()) {
         qFatal() << "Controller have already been initiated!";
     }
-    qontrol::Controller::init(new AppController);
+    qontrol::Controller::init(new Controller);
 }
 
-auto AppController::window() -> QWidget* {
+auto Controller::window() -> QWidget* {
 
     return qontrol::Controller::window();
 }
