@@ -4,10 +4,10 @@
 
 
 void AppController::loadPanels() {
-    auto *home = new Panel(new Home(), "home");
+    auto *home = new qontrol::Panel(new Home(), "home");
     this->insertPanel(home);
 
-    auto *next = new Panel(new Next(), "next");
+    auto *next = new qontrol::Panel(new Next(), "next");
     this->insertPanel(next);
     this->loadPanel("home");
 }
@@ -33,20 +33,20 @@ void AppController::cClicked() {
 }
 
 auto AppController::get() -> AppController* {
-    auto *ctrl = Controller::get();
+    auto *ctrl = qontrol::Controller::get();
     auto *controller = dynamic_cast<AppController*>(ctrl);
     return controller;
 }
 
 void AppController::init() {
-    if (Controller::isInit()) {
+    if (qontrol::Controller::isInit()) {
         qFatal() << "Controller have already been initiated!";
     }
-    Controller::init(new AppController);
+    qontrol::Controller::init(new AppController);
 }
 
 auto AppController::window() -> QWidget* {
 
-    return Controller::window();
+    return qontrol::Controller::window();
 }
 

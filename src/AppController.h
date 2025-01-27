@@ -3,7 +3,7 @@
 #include <QObject>
 #include <Qontrol>
 
-class AppController : public Controller {
+class AppController : public qontrol::Controller {
     Q_OBJECT 
 public:
     void loadPanels() override;

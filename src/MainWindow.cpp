@@ -20,7 +20,7 @@ void MainWindow::initWindow() {
         bBtn->setFixedSize(150, 150);
         auto *cBtn = new QPushButton("C");
         cBtn->setFixedSize(150, 150);
-        m_side_menu = (new Column(this))
+        m_side_menu = (new qontrol::Column(this))
             ->push(aBtn)
             ->push(bBtn)
             ->push(cBtn)
@@ -39,7 +39,7 @@ void MainWindow::initWindow() {
         m_panel_widget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     }
 
-    auto *mainLayout = (new Row(this))
+    auto *mainLayout = (new qontrol::Row(this))
         ->push(m_side_menu)
         ->push(m_panel_widget)
         ;

@@ -4,7 +4,7 @@
 #include <qpushbutton.h>
 #include <qtmetamacros.h>
 
-class Home : public Screen {
+class Home : public qontrol::Screen {
     Q_OBJECT
 public:
     explicit Home();

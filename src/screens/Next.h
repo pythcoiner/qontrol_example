@@ -4,7 +4,7 @@
 #include <qpushbutton.h>
 #include <qtmetamacros.h>
 
-class Next : public Screen {
+class Next : public qontrol::Screen {
     Q_OBJECT
 public:
     explicit Next();

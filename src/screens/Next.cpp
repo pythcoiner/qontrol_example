@@ -13,11 +13,11 @@ void Next::init() {
 }
 
 void Next::doConnect() {
-    connect(m_btn, &QPushButton::clicked, AppController::get(), &AppController::onPrevious, UNIQUE);
+    connect(m_btn, &QPushButton::clicked, AppController::get(), &AppController::onPrevious, qontrol::UNIQUE);
 }
 
 void Next::view() {
-    auto *mainLayout = (new Column(this))
+    auto *mainLayout = (new qontrol::Column(this))
         ->pushSpacer()
         ->push(m_btn)
         ->pushSpacer()
